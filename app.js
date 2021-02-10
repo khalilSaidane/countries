@@ -13,18 +13,19 @@ const countryCurrenciesEl = document.getElementById('currencies')
 const countryBordersEl = document.getElementById('borders')
 const countryFlagEl = document.getElementById('flag')
 
+// Global variable that holds all the countries
+// We need this for the empty search
 var countries = []
-init();
 
-async function getContries() {
-    const res = await fetch('https://restcountries.eu/rest/v2/all');
-    const countries = await res.json();
+const getContries = async () => {
+    const resonse = await fetch('https://restcountries.eu/rest/v2/all');
+    const countries = await resonse.json();
 
     return countries;
 
 }
 
-function displayCountries(countries) {
+const displayCountries = (countries) => {
     coutriesEl.innerHTML = ''
     countries.forEach(country => {
         const countryEl = document.createElement('div');
@@ -50,7 +51,7 @@ function displayCountries(countries) {
 
 searchBtn.addEventListener('click', (e) => search(), false);
 
-function setSelecteditemToActive(liEL) {
+const  setSelecteditemToActive = (liEL) => {
     // check if any element have a class active
     // if so then remove the class from it
     let getElemWithClass = document.querySelector('.active');
@@ -66,8 +67,8 @@ async function search() {
     // If the imput is not empty make a call to the restcountries API
     // 
     if (value != '') {
-        const res = await fetch('https://restcountries.eu/rest/v2/name/' + value);
-        const countries = await res.json();
+        const resonse = await fetch('https://restcountries.eu/rest/v2/name/' + value);
+        const countries = await resonse.json();
         if (countries.length> 0){
             displayCountries(countries);
         }else{
@@ -78,7 +79,7 @@ async function search() {
     }
 }
 
-function setCountryDetail(country) {
+const setCountryDetail = (country) => {
     countryNameEl.innerHTML = country.nativeName;
     coutryCapitalEl.innerHTML = country.capital;
     coutryPopulatinEl.innerHTML = numberWithCommas(country.population);
@@ -124,7 +125,9 @@ function appendSpanEl(ul, text) {
 
 
 // Initialize the document with all the countries
-async function init() {
+const init = async() => {
     countries = await getContries();
     displayCountries(countries);
 }
+
+init();
