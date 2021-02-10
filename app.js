@@ -97,7 +97,14 @@ function setCountryDetail(country) {
         appendSpanEl(countryTimeZonesEl, timezone)
     })
     country.borders.forEach(border => {
-        appendSpanEl(countryBordersEl, getCountryByCode(border));
+        // borders is a list of alpha3Code
+        // we need to get the country name for every border
+        countries.forEach(country => {
+            if (country.alpha3Code == border) {
+                borderCountryName = country.name;
+            }
+        });
+        appendSpanEl(countryBordersEl, borderCountryName);
     })
     countryFlagEl.src = country.flag;
 }
@@ -114,14 +121,7 @@ function appendSpanEl(ul, text) {
     span.classList.add('badge', 'badge-secondary', 'mr-1');
     ul.appendChild(span)
 }
-function getCountryByCode(code) {
-    countries.forEach(country => {
-        if (country.alpha3Code == code) {
-            console.log(country.name)
-            return country.name;
-        }
-    })
-}
+
 
 // Initialize the document with all the countries
 async function init() {
