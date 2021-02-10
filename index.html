@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="./style.css">
+    <title>Document</title>
+</head>
+<body>
+    <header>
+    </header>
+
+    <section>
+        <div class="input-group m-1">
+            
+            <input id="search-input" placeholder="Search for a country.." type="text" class="form-control">
+            <button id="search-btn" class="btn btn-outline-success" type="button">Search</button>
+        </div>
+    </section>
+
+    <section>
+        <div class="row no-gutters flex" >
+            <div class="col-12 col-sm-6 col-md-8" style="overflow:scroll; height:900px;">
+                
+                    <ul id="countries">
+                        <h2>Loading...</h2>
+                    </ul>
+            
+            </div>
+            <div class="col-6 col-md-4 flex">
+                <div class="card" id="country-detail">
+                    <img id="flag" class="card-img-top">
+                    <div class="card-body">
+                        <table class="table">
+                            <tbody>
+                                <tr>
+                                    <th>
+                                        <label class="font-weight-bold">Native name:</label>
+                                    </th>
+                                    <th>
+                                        <h2 id="native-name"></h2>
+                                    </th>
+                                </tr>
+                                <tr>
+                                    <th>
+                                        <label class="font-weight-bold">capital:</label>
+                                    </th>
+                                    <th>
+                                        <p id="capital"></p>
+                                    </th>
+                                </tr>
+                                <tr>
+                                    <th>
+                                        <label class="font-weight-bold">Poppulation:</label>
+                                    </th>
+                                    <th>
+                                        <p id="population"></p>
+                                    </th>
+                                </tr>
+                                <tr>
+                                    <th>
+                                        <label class="font-weight-bold">Languages:</label> 
+                                    </th>
+                                    <th>
+                                        <ul id="languages"></ul>
+                                    </th>
+                                </tr>
+                                <tr>
+                                    <th>
+                                        <label class="font-weight-bold">Time zones:</label>  
+                                    </th>
+                                    <th>
+                                        <ul id="time-zones"> </ul>
+                                    </th>
+                                </tr>
+                                <tr>
+                                    <th>
+                                        <label class="font-weight-bold">Currencie names:</label> 
+                                    </th>
+                                    <th>
+                                        <ul id="currencies"></ul>
+                                    </th>
+                                </tr>
+                                <tr>
+                                    <th>
+                                        <label class="font-weight-bold">Border countries:</label> 
+                                    </th>
+                                    <th>
+                                        <ul id="borders"></ul>
+                                    </th>
+                                </tr>
+
+                            </tbody>
+                        </table>
+                    </div>
+                  </div>
+            </div>
+          </div>
+
+    </section>
+    <script src="./app.js"></script>
+</body>
+</html>
