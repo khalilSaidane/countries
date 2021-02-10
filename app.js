@@ -100,12 +100,8 @@ const setCountryDetail = (country) => {
     country.borders.forEach(border => {
         // borders is a list of alpha3Code
         // we need to get the country name for every border
-        countries.forEach(country => {
-            if (country.alpha3Code == border) {
-                borderCountryName = country.name;
-            }
-        });
-        appendSpanEl(countryBordersEl, borderCountryName);
+        borderCountry = countries.find(element => element.alpha3Code == border)
+        appendSpanEl(countryBordersEl, borderCountry.name);
     })
     countryFlagEl.src = country.flag;
 }
