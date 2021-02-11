@@ -8,4 +8,4 @@ You can download the repository and run.
 ```
 $ php -S 127.0.0.1:8080
 ```
-Check localhost:8080 on the your browser.
+Check localhost:8080 on your browser.

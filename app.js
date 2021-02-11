@@ -2,7 +2,7 @@
 const coutriesEl = document.getElementById('countries')
 // search div
 const searchBtn = document.getElementById('search-btn')
-const searcEl = document.getElementById('search-input')
+const searcInput = document.getElementById('search-input')
 // detail div
 const countryNameEl = document.getElementById('native-name')
 const coutryCapitalEl = document.getElementById('capital')
@@ -37,6 +37,7 @@ const displayCountries = (countries) => {
         `
         countryEl.addEventListener('click', (e) => {
             setCountryDetail(country)
+            //countryEl.childNodes = [text, li.list-group-item.country, text]
             setSelecteditemToActive(countryEl.childNodes[1])
         })
         coutriesEl.appendChild(countryEl)
@@ -49,7 +50,7 @@ const displayCountries = (countries) => {
 
 }
 
-searchBtn.addEventListener('click', (e) => search(), false);
+searchBtn.addEventListener('click', (e) => search());
 
 const  setSelecteditemToActive = (liEL) => {
     // check if any element have a class active
@@ -63,12 +64,12 @@ const  setSelecteditemToActive = (liEL) => {
 }
 // Search by country name. It can be the native name or partial name
 async function search() {
-    const value = searcEl.value;
+    const value = searcInput.value;
     // If the imput is not empty make a call to the restcountries API
-    // 
     if (value != '') {
         const resonse = await fetch('https://restcountries.eu/rest/v2/name/' + value);
         const countries = await resonse.json();
+        // Check if there is ny result that matches the search
         if (countries.length> 0){
             displayCountries(countries);
         }else{
