@@ -69,7 +69,7 @@ async function search() {
     if (value != '') {
         const resonse = await fetch('https://restcountries.eu/rest/v2/name/' + value);
         const countries = await resonse.json();
-        // Check if there is ny result that matches the search
+        // Check if there is any result that matches the search
         if (countries.length> 0){
             displayCountries(countries);
         }else{
