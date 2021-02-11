@@ -8,32 +8,29 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="./style.css">
-    <title>Document</title>
+    <title>Countries</title>
 </head>
 <body>
-    <header>
-    </header>
-
-    <section>
-        <div class="input-group m-1">
+    <header class="navbar navbar-light bg-light">
+        <div class="input-group">
             
             <input id="search-input" placeholder="Search for a country.." type="text" class="form-control">
             <button id="search-btn" class="btn btn-outline-success" type="button">Search</button>
         </div>
-    </section>
+    </header>
 
     <section>
         <div class="row no-gutters flex" >
-            <div class="col-12 col-sm-6 col-md-8" style="overflow:scroll; height:900px;">
+            <div class="col-12 col-sm-6 col-md-8" style="overflow:scroll; height:750px;">
                 
                     <ul id="countries">
                         <h2>Loading...</h2>
                     </ul>
             
             </div>
-            <div class="col-6 col-md-4 flex">
+            <div class="col-6 col-md-4">
                 <div class="card" id="country-detail">
-                    <img id="flag" class="card-img-top">
+                    <img id="flag" class="card-img-top" alt="country-flag">
                     <div class="card-body">
                         <table class="table">
                             <tbody>
